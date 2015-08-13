@@ -1,0 +1,20 @@
+<Book>
+  <div>This might be a preface to the book or some other frontmatter</div>
+  <include href="./chapter-1.html"/>
+  <include href="./chapter-2.html">Velocity (overridden title)</include>
+  <include href="./chapter-3.html">Acceleration</include>
+</Book>
+
+
+<!-- Alternate with no chapter prefaces and whole ToC in 1 file -->
+<Book>
+  <div>This might be a preface to the book or some other frontmatter</div>
+  <Chapter title="Position">
+    <include href="./section-1-1.html"/>
+    <include href="./section-1-2.html"/>
+  </Chapter>
+  <Chapter title="Velocity">
+    <include href="./section-2-1.html"/>
+    <include href="./section-2-2.html"/>
+  </Chapter>
+</Book>

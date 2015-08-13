@@ -1,0 +1,36 @@
+// "Rule" and "RuleSet" are actually CSS terms.
+
+Book {
+  Chapter {
+    Exercise.homework {
+      move-to: rs-123; // or just `homework-problems`
+
+      Answer { move-to: rs-234; }
+    }
+
+    Definition { copy-to: rs-345; }
+
+    // This says to create a fragment-container at the end of the chapter (book template),
+    // and put all the homework-problmes in here
+    ::div { content: pending(rs-123); }
+  }
+
+  // End of book materials.
+  // This says to create a fragment named 'Homework Solutions' which has a
+  // fragment-container with all the solutions in the book, grouped by chapter.
+
+  // create the solutions section with text "Homework Solutions"
+  ::div {
+    ::div { content: 'Homework Solutions'; }
+    content: pending(rs-234);
+    group-by: Chapter;
+  }
+
+  // create the book Glossary section and sort by the Term
+  ::div {
+    ::div { content: 'Glossary'; }
+    content: pending(rs-345);
+    sort-by: Term;
+  }
+
+}

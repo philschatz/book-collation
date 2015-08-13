@@ -1,0 +1,12 @@
+rs-123:
+  Match 'Exercise' with class "homework"
+  MoveToEndOf: 'Chapter'
+rs-234:
+  Match: 'Answer' in an 'Exercise' with class "homework"
+  MoveToEndOf: 'Book'
+  GroupBy: 'Chapter'
+
+rs-345:
+  Match: 'term' with 'meaning'
+  MoveToEndOf: 'Book'
+  OrderBy: 'alphabet'
