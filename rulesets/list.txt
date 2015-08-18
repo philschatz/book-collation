@@ -9,4 +9,4 @@ rs-234:
 rs-345:
   Match: 'term' with 'meaning'
   MoveToEndOf: 'Book'
-  OrderBy: 'alphabet'
+  OrderBy: 'Term'
