@@ -2,6 +2,7 @@
 
 Book {
   Chapter {
+    // Move all Exercises with class "homework" to a place defined by rs-123
     Exercise.homework {
       move-to: rs-123; // or just `homework-problems`
 
@@ -19,18 +20,18 @@ Book {
   // This says to create a fragment named 'Homework Solutions' which has a
   // fragment-container with all the solutions in the book, grouped by chapter.
 
-  // create the solutions section with text "Homework Solutions"
+  // create the solutions section with title "Homework Solutions"
   ::div {
     ::div { content: 'Homework Solutions'; }
     content: pending(rs-234);
-    group-by: Chapter;
+    group-by: Chapter; // group-by takes a CSS selector. Usually just `Chapter` or `Section`
   }
 
   // create the book Glossary section and sort by the Term
   ::div {
     ::div { content: 'Glossary'; }
     content: pending(rs-345);
-    sort-by: Term;
+    sort-by: Term; // Sort-by takes a CSS selector. Probably the only place `sort-by` will be used
   }
 
 }
